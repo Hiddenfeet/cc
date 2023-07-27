@@ -97,9 +97,9 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     [bscTokens.dai, bscTokens.usdt],
   ],
   [ChainId.CRONOS]: [
-    [cronosTokens.troll, cronosTokens.wcro],
-    [cronosTokens.troll, cronosTokens.usdt],
-    [cronosTokens.troll, cronosTokens.usdc],
+    [cronosTokens.smore, cronosTokens.wcro],
+    [cronosTokens.smore, cronosTokens.usdt],
+    [cronosTokens.smore, cronosTokens.usdc],
   ],
 }
 
