@@ -1,0 +1,99 @@
+import {
+  MetamaskIcon,
+  // WalletConnectIcon,
+  // TrustWalletIcon,
+  // MathWalletIcon,
+  // TokenPocketIcon,
+  // BinanceChainIcon,
+  // SafePalIcon,
+  // Coin98Icon,
+  // BraveIcon,
+  // BloctoIcon,
+  // CoinbaseWalletIcon,
+  // OperaIcon,
+  WalletConfig,
+  DefiWalletIcon,
+} from '@pancakeswap/uikit'
+
+export enum ConnectorNames {
+  MetaMask = 'metaMask',
+  Injected = 'injected',
+  WalletConnect = 'walletConnect',
+  CyptoDefiWallet = 'cryptoDefiWallet',
+  BSC = 'bsc',
+  CRONOS = 'cronos',
+  Blocto = 'blocto',
+  WalletLink = 'coinbaseWallet',
+}
+
+export const wallets: WalletConfig<ConnectorNames>[] = [
+  {
+    title: 'Metamask',
+    icon: MetamaskIcon,
+    installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isMetaMask),
+    connectorId: ConnectorNames.MetaMask,
+    priority: 1,
+    href: 'https://metamask.app.link/dapp/pancakeswap.finance/',
+  },
+  // {
+  //   title: 'Crypto.com Defi Wallet',
+  //   icon: MetamaskIcon,
+  //   installed: typeof window !== 'undefined' && Boolean(window.DefiWallet),
+  //   connectorId: ConnectorNames.CyptoDefiWallet,
+  //   priority: 2,
+  //   href: 'https://metamask.app.link/dapp/pancakeswap.finance/',
+  // },
+  // {
+  //   title: 'WalletConnect',
+  //   icon: WalletConnectIcon,
+  //   connectorId: ConnectorNames.WalletConnect,
+  //   priority: 3,
+  // },
+  {
+    title: 'Crypto.com Defi Wallet',
+    icon: DefiWalletIcon,
+    installed: typeof window !== 'undefined' && Boolean(window.CronosChain),
+    connectorId: ConnectorNames.CRONOS,
+    priority: 2,
+  },
+  // {
+  //   title: 'Coinbase Wallet',
+  //   icon: CoinbaseWalletIcon,
+  //   connectorId: ConnectorNames.WalletLink,
+  //   priority: 5,
+  // },
+  // {
+  //   title: 'Trust Wallet',
+  //   icon: TrustWalletIcon,
+  //   connectorId: ConnectorNames.Injected,
+  //   installed:
+  //     typeof window !== 'undefined' &&
+  //     (Boolean(window.ethereum?.isTrust) ||
+  //       // @ts-ignore
+  //       Boolean(window.ethereum?.isTrustWallet)),
+  //   priority: 6,
+  //   href: 'https://link.trustwallet.com/open_url?coin_id=20000714&url=https://pancakeswap.finance/',
+  //   downloadLink: {
+  //     desktop: 'https://chrome.google.com/webstore/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph/related',
+  //   },
+  // },
+  // {
+  //   title: 'Opera Wallet',
+  //   icon: OperaIcon,
+  //   connectorId: ConnectorNames.Injected,
+  //   priority: () => {
+  //     return typeof window !== 'undefined' && Boolean(window.ethereum?.isOpera) ? 0 : 6
+  //   },
+  //   installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isOpera),
+  //   href: 'https://www.opera.com/crypto/next',
+  // },
+  // {
+  //   title: 'Brave Wallet',
+  //   icon: BraveIcon,
+  //   connectorId: ConnectorNames.Injected,
+  //   priority: () => {
+  //     return typeof window !== 'undefined' && Boolean(window.ethereum?.isBraveWallet) ? 0 : 6
+  //   },
+  //   installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isBraveWallet),
+  // },
+]
